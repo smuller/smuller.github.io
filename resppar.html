@@ -1,0 +1,92 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" 
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+  <link rel="stylesheet" type="text/css" href="style.css" />
+  <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1" />
+<title>Responsive Parallelism - Stefan Muller</title>
+</head>
+<script src="papers.js" type="text/javascript"></script>
+<body>
+  <div style="display: block; width: 1000px; margin-left: auto; margin-right: auto">
+    <div class="bar">
+      <div style="position: absolute; left:25px; top:-5px;">
+	<a href="index.html"><h2>Stefan K. Muller</h2></a>
+      </div>
+	  
+      <!--<p style="padding: 0px;">-->
+      	<a href="index.html#about">About</a>&nbsp;&nbsp;&nbsp;&nbsp;
+	<a href="index.html#research">Research</a>&nbsp;&nbsp;&nbsp;&nbsp;
+	<a href="index.html#advising">Advising</a>&nbsp;&nbsp;&nbsp;&nbsp;
+	<a href="pubs.html?by=year">Publications</a>&nbsp;&nbsp;&nbsp;&nbsp;
+	<a href="index.html#teaching">Teaching</a>&nbsp;&nbsp;&nbsp;&nbsp;
+	<a href="index.html#personal">Personal</a>&nbsp;&nbsp;&nbsp;&nbsp;
+	<a href="Muller-CV.pdf">CV</a>&nbsp;&nbsp;&nbsp;&nbsp;
+      <!--</p>-->
+    </div>
+    
+    <div class="content">
+      <h1>Responsive Parallelism</h1>
+      <div style="float: right; width: 300px">
+	<img src="priws.png" width=300 />
+      </div>
+      <h3>
+	Overview
+      </h3>      
+      <p>
+	Multicore hardware is no longer present only in large data centers
+	handling specially-written batch computations: almost all consumer
+	hardware today is multicore, and so the landscape of parallel computing
+	has changed. Parallel software must now be able to handle features
+	of consumer software like user interaction and responsiveness
+	requirements. This is particularly a challenge for the frameworks and
+	models of <i>implicit parallelism</i>, which are elegant and
+	have been well-designed and tested over decades, but are not prepared
+	for this changing landscape. This project seeks to extend the models
+	and frameworks with facilities for interaction, responsiveness,
+	fairness, and other hallmarks of consumer software.
+      </p>
+
+      <h3>People</h3>
+      <p>
+      <b>Collaborators</b>
+      <ul>
+	<li><a href="http://www.umut-acar.org/">Umut A. Acar (Carnegie Mellon)</a>
+	<li><a href="https://www.cse.wustl.edu/~angelee/home_page/">
+	    Angelina Lee (Washington U. in St. Louis)</a>
+	<li><a href="https://www.cse.wustl.edu/~kunal/">Kunal Agrawal
+	    (Washington U. in St. Louis)</a>
+      </ul>
+      </p>
+
+      <p>
+      <b>Former Collaborators</b>
+      <ul>
+	<li><a href="https://www.cs.cmu.edu/~jatina/">Jatin Arora (Carnegie Mellon)</a>
+	<li><a href="https://www.cs.cmu.edu/~swestric/">Sam Westrick (Carnegie Mellon)</a>
+	<li>Kyle Singer (Washington U. in St. Louis)</li>
+	<li>Noah Goldstein (Washington U. in St. Louis)</li>
+      </ul>
+      </p>
+
+      <h3>Funding</h3>
+      <p>
+	NSF CCF-2107289: Responsive Parallelism for
+	Interactive Applications: Theory and Practice
+      </p>
+      
+      <h3>Publications</h3>
+
+      <div style="padding-left: 15px;">
+	<script type="text/javascript">
+	  document.write(papersToHTML(papers.filter((p) => p.topic == "Responsive Parallelism").sort(syear)));
+	</script>
+      </div>
+            <div class="botbar">
+	  Copyright &copy; 2021 Stefan Muller.
+	  No framework, but <a href="hugo.html">Hugo</a> helped.
+	</div>
+    </div>
+  </div>
+</body>
+</html>
