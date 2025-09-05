@@ -2,15 +2,79 @@ const CONF = 0;
 const WORKSHOP = 1;
 const TR = 2;
 const SHORT = 3;
+const JOURNAL = 4;
 
 const papers = [
+    {authors: "Stefan K. Muller, Jan Hoffmann",
+     title: "Modeling and analyzing evaluation cost of CUDA kernels",
+     conf: "ACM Transactions on Parallel Computing (TOPC)",
+     year: 2024,
+     topic: "CUDA Resource Analysis",
+     type: JOURNAL,
+     acm: "https://dl.acm.org/doi/pdf/10.1145/3639403"
+    },
+    {authors: "Mark Lou and Stefan K. Muller",
+     title: "Automatic Static Analysis-Guided Optimization of CUDA Kernels",
+     conf: "PMAM",
+     year: 2024,
+     topic: "CUDA Resource Analysis",
+     type: WORKSHOP,
+     pdf: "papers/pmam24-preprint.pdf"
+     },
+    {authors: "Jatin Arora, Stefan K. Muller, and Umut A. Acar",
+     title: "Disentanglement with Futures, State, and Interaction",
+     conf: "POPL",
+     year: 2024,
+     topic: "Responsive Parallelism",
+     type: CONF,
+     pdf: "papers/popl24a-preprint.pdf",
+    },
+    {authors: "Francis Rinaldi, june wunder, Arthur Azevedo de Amorim, and Stefan K. Muller",
+     title: "Pipelines and Beyond: Graph Types for ADTs with Futures",
+     conf: "POPL",
+     year: 2024,
+     topic: "Graph Types",
+     type: CONF,
+     pdf: "papers/popl24-preprint.pdf",
+     arxiv: "https://arxiv.org/abs/2311.06984",
+     github: "https://github.com/junewunder/gml-popl24",
+     artifact: "https://zenodo.org/records/10126819",
+    },
+    {authors: "Stefan K. Muller",
+     title: "Language-Agnostic Static Deadlock Detection for Futures",
+     conf: "PPoPP",
+     year: 2024,
+     topic: "Graph Types",
+     type: CONF,
+     pdf: "papers/ppopp24-preprint.pdf",
+     artifact: "https://zenodo.org/records/10223442"
+    },
+    {authors: "Stefan K. Muller, Kyle Singer, Devyn Terra Keeney, Andrew Neth, Kunal Agrawal, I-Ting Angelina Lee, Umut A. Acar",
+     title: "Responsive parallelism with synchronization",
+     conf: "PLDI",
+     year: 2023,
+     topic: "Responsive Parallelism",
+     type: CONF,
+     pdf: "papers/pldi23-preprint.pdf",
+     arxiv: "https://arxiv.org/abs/2304.03753",
+     artifact: "https://zenodo.org/records/7706984"
+    },
+		{authors: "Stefan K. Muller",
+		 title: "Static prediction of parallel computation graphs",
+		 conf: "POPL",
+		 year: 2022,
+		 topic: "Graph Types",
+		 type: CONF,
+		 pdf: "papers/popl22-preprint.pdf"},
     {authors: "Stefan K. Muller, Jan Hoffmann",
      title: "Modeling and analyzing evaluation cost of CUDA kernels",
      conf: "POPL",
      year: 2021,
      topic: "CUDA Resource Analysis",
      type: CONF,
-     pdf: "papers/popl21-preprint.pdf"
+     pdf: "papers/popl21-preprint.pdf",
+     artifact: "https://zenodo.org/records/4323505",
+     github: "https://github.com/smuller/RaCUDA"
     },
     {authors: "Stefan K. Muller, Hannah Ringler",
      title: "A rhetorical framework for programming language evaluation",
@@ -26,7 +90,8 @@ const papers = [
      topic: "Responsive Parallelism",
      type: CONF,
      pdf: "papers/pldi20-preprint.pdf",
-     arxiv: "https://arxiv.org/abs/2004.02870"
+     arxiv: "https://arxiv.org/abs/2004.02870",
+     artifact: "https://zenodo.org/records/3692205"
     },
     {authors: "Kyle Singer, Noah Goldstein, Stefan K. Muller, Kunal Agrawal, I-Ting Angelina Lee, Umut A. Acar",
      title: "Priority Scheduling for Interactive Applications",
@@ -148,12 +213,18 @@ function makeLinks(p) {
     if (isDefined(p.tr)) {
 	links += "[<a href=\"" + p.tr + "\">companion tech report</a>]&nbsp;&nbsp;";
     }
+    if (isDefined(p.github)) {
+	links += "[<a href=\"" + p.github + "\"><img src=\"github-mark.png\" height=20 style=\"vertical-align:middle\" />&nbsp;github</a>]&nbsp;&nbsp;"
+    }
+    if (isDefined(p.artifact)) {
+	links += "[<a href=\"" + p.artifact + "\">artifact</a>]&nbsp;&nbsp;";
+    }
     return links;
 }
     
 
 function paperHTML(p) {
-    return "<div>" + p.authors + "<br />" + p.title + "<br />" + p.conf + (p.type == TR ? "<br />" : " ") + p.year + (p.type == SHORT ? " (Short Paper)" : "") + "<br />" + makeLinks(p) + "</div>";
+    return "<div>" + p.authors + "<br />" + p.title + "<br />" + p.conf + ((p.type == TR || p.type == JOURNAL) ? "<br />" : " ") + p.year + (p.type == SHORT ? " (Short Paper)" : "") + (isDefined(p.note) ? "<br />" + p.note : "") + "<br />" + makeLinks(p) + "</div>";
 }
 
 function groupBy(f) {
@@ -184,6 +255,8 @@ function ptype(p) {
 	return "Workshop and Short Papers";
     case TR:
 	return "Technical Reports and Theses";
+    case JOURNAL:
+	return "Journal Papers";
     default:
 	return "Other";
     }

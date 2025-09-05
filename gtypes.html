@@ -1,0 +1,87 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" 
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+  <link rel="stylesheet" type="text/css" href="style.css" />
+  <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1" />
+<title>Responsive Parallelism - Stefan Muller</title>
+</head>
+<script src="papers.js" type="text/javascript"></script>
+<body>
+  <div style="display: block; width: 1000px; margin-left: auto; margin-right: auto">
+    <div class="bar">
+      <div style="position: absolute; left:25px; top:-5px;">
+	<a href="index.html"><h2 id="grayname">Stefan K. Muller</h2></a>
+      </div>
+	  
+      <!--<p style="padding: 0px;">-->
+      	<a href="index.html#about" id="barlink">About</a>&nbsp;&nbsp;&nbsp;&nbsp;
+	<a href="index.html#research" id="barlink">Research</a>&nbsp;&nbsp;&nbsp;&nbsp;
+	<a href="index.html#advising" id="barlink">Advising</a>&nbsp;&nbsp;&nbsp;&nbsp;
+	<a href="pubs.html?by=year" id="barlink">Publications</a>&nbsp;&nbsp;&nbsp;&nbsp;
+	<a href="index.html#teaching" id="barlink">Teaching</a>&nbsp;&nbsp;&nbsp;&nbsp;
+	<a href="index.html#personal" id="barlink">Personal</a>&nbsp;&nbsp;&nbsp;&nbsp;
+	<a href="Muller-CV.pdf" id="barlink">CV</a>&nbsp;&nbsp;&nbsp;&nbsp;
+      <!--</p>-->
+    </div>
+    
+    <div class="content">
+      <h1>Graph Types</h1>
+      <div style="float: right; width: 300px">
+	<img src="gtypes.png" width=300 />
+      </div>
+      <h3>
+	Overview
+      </h3>      
+      <p>
+	Decades of research into the theory of parallel programs have
+	represented the dependency structure of parallel programs as directed
+	graphs, which can be used to describe everything from the amount of
+	parallelism in an algorithm to the presence or absence of a deadlock.
+	However, these graphs are not particularly suitable for static analysis
+	as a dependency graph is a representation of a <i>particular execution</i>
+	of a program rather than the program itself. Graph types aim to
+	describe <i>families</i> of graphs that can arise from executing a
+	parallel program. A graph type can be inferred statically from the
+	program using a <i>graph type system</i>, and the graph type itself
+	can then be analyzed for properties of interest in a way that need
+	not be connected to details of the source code or even the
+	programming language used.
+      </p>
+
+      <h3>People</h3>
+      <p>
+	<b>Students</b>
+	<ul>
+	  <li>Francis Rinaldi</li>
+	  <li><a href="https://junewunder.com/">june wunder</a></li>
+	  <li>Edman Alicea-Marrero</li>
+	</ul>
+      </p>
+      <b>Collaborators</b>
+      <ul>
+	<li><a href="http://arthuraa.net/">Arthur Azevedo de Amorim (RIT)</a>
+      </ul>
+      </p>
+
+      <h3>Funding</h3>
+      <p>
+	NSF CCF-2107289: Responsive Parallelism for
+	Interactive Applications: Theory and Practice
+      </p>
+      
+      <h3>Publications</h3>
+
+      <div style="padding-left: 15px;">
+	<script type="text/javascript">
+	  document.write(papersToHTML(papers.filter((p) => p.topic == "Graph Types").sort(syear)));
+	</script>
+      </div>
+            <div class="botbar">
+	  Copyright &copy; 2021 Stefan Muller.
+	  No framework, but <a href="hugo.html" id="barlink">Hugo</a> helped.
+	</div>
+    </div>
+  </div>
+</body>
+</html>

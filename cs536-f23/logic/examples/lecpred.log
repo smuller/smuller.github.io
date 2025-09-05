@@ -1,0 +1,2 @@
+Forall x. Exists y. Greater(y, x) => ~Exists x. Forall y. ~Greater(y, x)
+Forall x. Exists y. Greater(y, x)

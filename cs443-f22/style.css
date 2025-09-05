@@ -1,0 +1,118 @@
+body
+{background-color: #ffffff;
+ color: #303030;
+ font: 11pt;
+ font-family: "Verdana", sans-serif;
+}
+
+p
+{
+    padding-left: 20px;
+}
+
+a
+{
+    text-decoration: none;
+    color: #505090;
+}
+
+a:visited
+{
+    text-decoration: none;
+    color: #505090;
+}
+
+a:hover
+{
+    text-decoration: none;
+    color: #101050;
+}
+
+h1
+{
+    color: #505090;
+    font-family: sans-serif;
+}
+
+h2
+{
+    padding-top: 50px;
+    color: #505090;
+    font-family: sans-serif;
+}
+
+h3
+{
+    color: #505090;
+    font-family: sans-serif;
+    padding-left: 10px;
+}
+
+hr
+{
+    border-top: solid 1px #505090;
+    border-left: none;
+    border-right: none;
+    border-bottom: none;
+    height: 1px;
+}
+
+table
+{
+    border-spacing: 0px;
+}
+
+td { padding: 5px; }
+
+.thur
+{
+    border-bottom: solid 1px #505090;
+    border-left: none;
+    border-right: none;
+    border-top: none;
+}
+
+.intro
+{
+    background-color: #ff5555;
+}
+
+.ocaml
+{
+    background-color: #aabbff;
+}
+
+.study
+{
+    background-color: #555555;
+}
+
+.syntax
+{
+    background-color: #33cc33;
+}
+
+.semantics
+{
+    background-color: #ffff55;
+}
+
+.synsem
+{
+    background-color: #99e644;
+}
+
+.types
+{
+    background-color: #e68e22;
+}
+
+.codegen
+{
+    background-color: #ac7210;
+}
+
+.logic
+{
+    background-color: #ac1dbf
+}

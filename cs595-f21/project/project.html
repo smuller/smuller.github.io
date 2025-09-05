@@ -1,0 +1,308 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" 
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+<link rel="stylesheet" type="text/css" href="../style.css" />
+<title>CS595 Topics in PL Final Project</title>
+</head>
+<body>
+<table border="0" width="100%">
+<tr>
+<td width="20%">
+&nbsp;
+</td>
+<td width="60%" id="main">
+  <h1>CS595 Applications in PL Final Project</h1>
+
+  <h2>General Info</h2>
+  <ul>
+    <li>The project may be done in groups of 1-3 students. Expectations for the
+      scope of the project will be scaled according to group size, so smaller
+      groups aren't at a disadvantage.</li>
+    <li>The goal of the project is to apply the tools and techniques learned
+      in the class to a domain of interest to you, whether that's your
+      research, another interest in CS or an interest outside of CS.</li>
+  </ul>
+
+  <h3>Project Scope</h3>
+  <p>
+  (Added 11/1) At this point, your group has discussed project ideas with
+  Stefan at least once and you should have some general ideas of what
+  project-specific results to include.
+  As a broad guideline, each project should include:
+  <ul>
+    <li>A definition of a model for some language, system or idea
+      (syntax defining the language for your model, as well as rules for
+      one or more judgments, which might include typing rules, operational
+      semantics, cost semantics and others).
+    </li>
+    <li>At least one proof, roughly on the scale of the progress/preservation
+      you've been doing for homework, that shows that your model "makes sense".
+      For a language, this might be a proof of type safety (progress and
+      preservation). Or it may be something else.
+    </li>
+  </ul>
+  If you're having doubts as to how these guidelines apply to your particular
+  project, talk to Stefan.
+  </p>
+
+  <h2>Project Ideas</h2>
+  <ol>
+    <li>
+      Model the syntax and semantics of an existing language or system and
+      develop a type system to rule out some class of "bad" programs
+      (<i>Examples:</i> the division by zero type system from HW1)
+    </li>
+    <li> Develop a syntax and semantics to model something that isn't a
+      (conventional) programming language, and prove something interesting
+      about it (this could involve developing a type system as in Idea 1,
+      but doesn't need to).
+      (<i>Examples:</i> the model of red-black trees and corresponding proof
+      from HW0, <a href="https://s3-us-west-1.amazonaws.com/disneyresearch/wp-content/uploads/20160705213118/A-Compiler-for-3D-Machine-Knitting-Paper.pdf">this paper</a>)
+    </li>
+    <li> Extend a language model from a paper (add features,
+      rule out more "bad" programs, allow more "good" programs, etc.)
+    </li>
+  </ol>
+  <p>
+    If you have other ideas that you think would make a good project in line
+    with the goals of the class, talk to Stefan.
+  </p>
+  <p>
+    If you're looking for inspiration or aren't sure what fits within this,
+    any of the papers linked under the "Applications" section of the
+    course site would make an A+ final project (keep in mind, of course, that
+    most of these are published conference papers, so are more thorough
+    than would be expected for a final project.)
+  </p>
+    
+
+  <h2>Timeline/Deadlines</h2>
+  <p>These are highly subject to change.</p>
+
+  <p>Late days may be used on the proposal and final paper. Note that for group
+    projects, late days will be charged to everyone in the group with late
+    days remaining (that is, you can still use late days as long as anyone
+    in the group has late days remaining, but you can't pool them.)
+  </p>
+  
+  <table border=1>
+    <tr><td><a href="#idea">Initial idea and group</a></td>
+      <td>Oct. 13</td>
+      <td><b>NO LATE DAYS</b></td>
+    </tr>
+    <tr><td>Meetings w/ Stefan to discuss idea</td>
+      <td>~Oct. 15</td>
+      <td>(Schedule in advance)</td>
+    </tr>
+    <tr><td><a href="#proposal">Full proposal</a></td>
+      <td>Nov. 11</td>
+      <td>1-2 late days allowed</td>
+    </tr>
+    <tr><td>Present projects in class</td>
+      <td>Nov. 29, Dec. 1</td>
+      <td>&nbsp;</td>
+    </tr>
+    <tr><td><a href="#paper">Final project paper due</a></td>
+      <td>Dec. 8</td>
+      <td>1-2 late days allowed</td>
+    </tr>
+  </table>
+
+  <h2>Deliverables</h2>
+
+  More details on each of these will be announced as they get closer.
+  <a name="idea"></a>
+  <h3>Initial Idea</h3>
+  <b>Due:</b> Oct. 13, 11:59pm CT.
+  <p>
+    <ol>
+      <li>Find a group for the final project (or decide to work alone).</li>
+      <li>Schedule a meeting (for your whole group)
+	with Stefan to discuss the idea.</li>
+      <li>Submit 2-3 paragraphs (as a group)
+	describing the idea for your project.</li>
+    </ol>
+  </p>
+  <p>
+    The submission doesn't need to be very formal but should
+    indicate some thought about what you plan to do and how you plan
+    to relate it to the course topic. For example, if you're solving a
+    problem in a language or system, describe the language or system and
+    explain the problem.
+    If you're modeling something outside of CS, talk about the thing,
+    what features of it you plan to model, and some ideas for what you
+    plan to say/prove about the model.
+    If you're planning to extend a paper, cite and summarize the paper
+    and talk briefly about your idea for an extension.
+  </p>
+  <p>
+    The submission won't be graded; you get full credit by submitting
+    something reasonable by the deadline.
+  </p>
+
+  <a name="proposal"></a>
+  <h3>Proposal</h3>
+  <b>Due:</b> Nov. 11, 11:59pm CT.
+
+  <p>
+    Your proposal should be approximately 1-3 pages and formatted like a
+    research proposal with at least the following general outline.
+  </p>
+  <ol>
+    <li> Introduction
+      <ul>
+	<li>Motivate the problem your project aims to solve; why is it
+	  important?</li>
+	<li>Give an overview of your proposed solution.</li>
+      </ul>
+    </li>
+    <li>Preliminary Work
+      <ul>
+	<li>Describe any work you've already done toward building your model:
+	  if you have any (rough draft) syntax or rules, present it here.
+	</li>
+	<li>The focus should be on the text description of what you've done
+	  and how it achieves your goals, not the low-level technical details
+	  of how you've accomplished it (intuition behind your syntax/rules and
+	  examples are great!)
+	</li>
+      </ul>
+    </li>
+    <li>Proposed Work
+      <ul>
+	<li>Outline what is left to be done.</li>
+	<li>Give rough statements of theorems/lemmas you plan to prove.
+	  Perhaps describe at a high level how you might go about proving
+	  them.</li>
+      </ul>
+    </li>
+    <li>Timeline and Research Plan
+      <ul>
+	<li>Give a (roughly) week-by-week timeline of when you plan to
+	  accomplish each of the goals of the proposed work.</li>
+	<li><b>For group projects, describe who is going to do what.</b></li>
+	<li>Example: "(Week of Nov. 15) Group members A and B are going to
+	  work together to flesh out the operational semantics.
+	  (Week of Nov. 22) B will prove Theorem 1.
+	  (Week of Nov. 29) A and B will make slides for the class presentation
+	  (Dec. 2-Dec. 6) A will prove Theorem 2, B will begin writing up the
+	  other results.
+	  (Dec. 6-Dec. 8) A will write up Theorem 2, A and B will polish the
+	  writing of hte paper."
+	</li>
+      </ul>
+    </li>
+  </ol>
+	  
+	 
+
+  <a name="paper"></a>
+  <h3>Final Paper</h3>
+  <b>Due:</b> Dec. 8, 11:59pm CT.
+
+  <p>
+    Your final paper should be in the format of an ACM research paper, with
+    some modifications detailed below. This
+    guarantees that everyone's paper will be in the same form and page limits,
+    etc., will be fair. ACM provides their own LaTeX class
+    file (as well as a Word template if you prefer to use that).
+    Information about the ACM class file and Word template is on
+    <a href = "https://www.acm.org/publications/proceedings-template">the
+      ACM's website</a>.
+    If you use Overleaf, this page has details about how to use the ACM
+    class on Overleaf.
+    If you're using LaTeX (locally or on Overleaf),
+    I put together a <a href="template.zip">template</a>
+    that has everything you should need.
+  </p>
+  <p>
+    I'll discuss the format and how to write a research paper in more detail
+    in class, but here are some highlights and differences from a standard
+    research paper.
+  </p>
+  <p>
+    You should have:
+    <ul>
+      <li>An introduction, much like the intro of your proposal.</li>
+      <li>One or more sections that discuss your contribution in a readable,
+	user-friendly way:
+	<ul>
+	  <li>Give all of the formal grammars, definitions, judgments, rules,
+	    proofs, etc., needed to know what you did, but for each block
+	    of formal mathematical notation, <i>also explain</i>
+	    what it means/does
+	    in plain English.
+	  </li>
+	  <li>Give examples to help illustrate how your model works, how to
+	    use it, etc.
+	  </li>
+	</ul>
+      </li>
+      <li>
+	A conclusion.</li>
+    </ul>
+  </p>
+  <p>
+    In contrast to most standard published research papers, you <i>don't</i>
+    need:
+    <ul>
+      <li>An abstract</li>
+      <li>A discussion of related papers</li>
+    </ul>
+  </p>
+  <p>
+    Your paper should be a <b>maximum</b> (<i>not</i> minimum) of 10 pages
+    in the ACM format. If you really need more space, let me know why and
+    I may make an exception.
+    There's no minimum page limit, but make sure you fully describe your
+    project and give all of the examples, intuitions, etc., you feel are needed.
+  </p>
+
+  <h3>For Writing Help</h3>
+  <p>The IIT Writing Center (see blurb below) is a useful resource if you're
+    looking for more guidance or feedback on your proposal or final paper.
+    The tutors there should be able to help you.
+    Full disclosure: One of them (<a href="https://sites.google.com/andrew.cmu.edu/hringler">Hannah</a>) is Stefan's fiancee.
+  </p>
+  <p>
+  Consider using the campus writing center as a resource for help with
+  written assignments like research papers, technical reports, or
+  presentations. The writing center provides one-on-one conferences
+  for both undergraduate and graduate students. Tutors can assist with
+  any stage in the writing process, from brainstorming and outlining
+  to final edits and bibliographies. Tutors read academic writing with
+  a critical eye given not only to grammar and syntax, but also to
+  understanding assignments, paragraph structure, clarity of ideas,
+  strategies for revision, and even strengthening arguments. Visit
+  here to make a (free!) appointment:
+  <a href="https://www.iit.edu/humanities/student-resources/writing-center">
+    https://www.iit.edu/humanities/student-resources/writing-center</a>.
+  
+  <h2>Grading</h2>
+  <p>
+    Final project grades will be based on the following:
+    <ul>
+      <li>Initial idea (full credit if submitted on time).</li>
+      <li>Proposal</li>
+      <li>Applicability to course</li>
+      <li>Appropriate scope for size of group</li>
+      <li>Correctness of proofs</li>
+      <li>Communication of ideas (in class and the final paper)</li>
+      <li>(For group projects) Did group members contribute equally?</li>
+    </ul>
+  </p>
+  <p>
+    <a href="rubric.pdf">Rubric for final presentation and project</a>
+  </p>
+
+
+	
+</td>
+<td width="20%">
+  &nbsp;
+</td>
+</tr>
+</table>
+</body>
+</html>

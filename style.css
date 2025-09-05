@@ -13,13 +13,13 @@ p
 a
 {
     text-decoration: none;
-    color: #902020;
+    color: #000e2f;
 }
 
 a:visited
 {
     text-decoration: none;
-    color: #902020;
+    color: #000e2f;
 }
 
 a:hover
@@ -30,19 +30,19 @@ a:hover
 
 h1
 {
-    color: #902020;
+    color: #000e2f;
     font-family: sans-serif;
 }
 
 h2
 {
-    color: #902020;
+    color: #000e2f;
     font-family: sans-serif;
 }
 
 h3
 {
-    color: #902020;
+    color: #000e2f;
     font-family: sans-serif;
     padding-left: 10px;
 }
@@ -77,9 +77,9 @@ hr
     text-align: right;
     font-size: 12pt;
     text-color: #eeeeee;
-    background-color: #902020;
+    background-color: #000e2f;
     height: 40px;
-    border-bottom: solid 1px #905050;
+    border-bottom: solid 1px #7c878e;
     z-index: 100;
 }
 
@@ -92,8 +92,8 @@ hr
     text-align: center;
     font-size: 9pt;
     color: #ffffff;
-    background-color: #902020;
-    border: solid 1px #905050;
+    background-color: #000e2f;
+    border: solid 1px #7c878e;
 }
 
 .content
@@ -110,7 +110,7 @@ hr
 {
     display: block;
     width: 100%;
-    border: solid 1px #905050;
+    border: solid 1px #7c878e;
     padding: 5px;
     min-height: 110px;
     margin-bottom: 15px;
@@ -123,4 +123,9 @@ hr
     width: 200px;
     height: 100px;
     overflow: hidden;
+}
+
+#grayname
+{
+    color: #aaaaaa;
 }

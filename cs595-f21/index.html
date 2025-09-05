@@ -1,0 +1,500 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" 
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+<link rel="stylesheet" type="text/css" href="style.css" />
+<title>CS595 Fall 2021: Topics and Applications in Programming Languages</title>
+<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1" />
+<meta name="keywords" content="Illinois Tech IIT CS595 Type Systems and Programming Languages" /> 
+</head>
+<script type="text/javascript">
+  function writeEmail () {
+    var first="s";
+    var last="muller2";
+    var uni="iit.edu";
+    document.write(first + last + "@" + uni);
+  }
+</script>
+<body>
+<table border="0" width="100%">
+<tr>
+<td width="20%">
+&nbsp;
+</td>
+<td width="60%" id="main">
+  <h1>CS595: Topics and Applications in Programming Languages, Fall 2021</h1>
+  <b>Instructor:</b> Stefan Muller,
+  <script type="text/javascript">
+    document.write("<a href=mailto:");
+    writeEmail();
+    document.write(">");
+    writeEmail();
+    document.write("</a>");
+  </script>
+  <noscript>
+    (first initial) (last name) (at) cs (dot) cmu (dot) edu
+  </noscript>
+  <br/>
+  <b>Lectures: </b> Mon, Wed. 11:15-12:30, Stuart 204
+  </br>
+<!-- <hr /> -->
+<div style="text-align: center;">
+  <p style="padding: 0px;">
+<a href="#desc">Course Description</a>&nbsp;&nbsp;&nbsp;&nbsp;
+<a href="#schedule">Schedule</a>&nbsp;&nbsp;&nbsp;&nbsp;
+<a href="#applications">Applications</a>&nbsp;&nbsp;&nbsp;&nbsp;
+<a href="#policies">Policies</a>&nbsp;&nbsp;&nbsp;&nbsp;
+<a href="project/project.html">Project</a>
+</p>
+</div>
+<hr />
+
+<a name="desc"></a>
+<h2>Course Description</h2>
+<p>
+Type systems provide many programming languages with a certain
+guarantee of runtime safety, usually that type errors will not occur
+at runtime. More advanced and exotic type systems can guarantee more
+interesting properties of programs, and are used in active research to
+guarantee information security, resource (e.g., time, energy, space)
+usage bounds, safety properties of concurrent programs and even to
+prove complex mathematical theorems. This course will teach the formal
+theory underlying the study of programming languages and, in
+particular, type systems, and the techniques that are used to prove
+properties of programming languages. We will also explore interesting
+applications of type systems in modern research, including some drawn
+from those above and others based on students' interest and research.
+</p>
+<p>
+Students will complete a final project in which they design a type
+system or language model (or extension of an existing one) to solve an
+interesting problem related to their own research or other interests.
+</p>
+
+  <p>
+    <b>Prerequisites: </b>
+There are no formal prerequisites beyond mathematical sophistication
+and experience programming in any statically typed programming
+language (e.g., C/C++, Rust, Java, Haskell, ML). In addition,
+experience with functional programming will be helpful but not
+required.
+</p>
+
+  <p>
+Advanced undergraduate students are welcome to take this class, but
+may require permission to register.
+  </p>
+
+  <p><b>Textbook: </b>
+There is <i>no required textbook</i> for the class.
+  </p>
+  <p>
+For students wanting a reference and additional depth into some of the material,
+the following books may be useful, but there is no need to buy one for
+the class.<br />
+Robert Harper, <a href="http://www.cs.cmu.edu/~rwh/pfpl/index.html"><i>Practical Foundations for Programming Languages
+(Second Edition)</i></a>,
+Cambridge, 2016. <br />
+Benjamin C. Pierce, <i>Types and Programming Languages</i>, MIT, 2002.
+</p>
+
+  <p><b>Course Objectives:</b>
+    After taking this class, students should be able to:
+    <ul>
+      <li> Understand the models, notations and
+  techniques used by Programming Languages researchers to formalize
+  languages and systems
+      <li> Formally prove properties about programming languages and programs
+      <li> Use the above techniques to design new type systems
+  and models to formalize and prove properties about their favorite
+  language features and systems 
+      <li> Read and understand a research paper in the field of
+  Programming Languages
+    </ul>
+  </p>
+
+      <a name="schedule"></a>
+  <h2>Schedule</h2>
+  <p>
+    Note: this schedule is tentative and subject to change. The last ~1/3
+    of the class will consist largely of presentations; the schedule is TBD.
+  </p>
+  <p>
+  <table>
+    <tr class="mon">
+      <td class="mon">August</td>
+      <td class="mon">23</td>
+      <td>Intro and Rule induction</td>
+      <td><a href="lectures/1.pdf">Notes</a></td>
+    </tr>
+    <tr class="wed">
+      <td class="wed"></td>
+      <td class="wed">25</td>
+      <td class="wed">Statics and dynamics</td>
+      <td class="wed"><a href="lectures/2.pdf">Notes</a></td>
+      <td class="wed">&nbsp;</td>
+    </tr>
+    <tr>
+      <td></td>
+      <td>30</td>
+      <td>Type safety</td>
+      <td><a href="lectures/3.pdf">Notes</a></td>
+    </tr>
+    <tr>
+      <td class="wed">September</td>
+      <td class="wed">1</td>
+      <td class="wed">Binding and substitution</td>
+      <td class="wed"><a href="lectures/4.pdf">Notes</a></td>
+      <td class="wed">HW0 Out</td>
+    </tr>
+    <tr>
+      <td></td>
+      <td>6</td>
+      <td>NO CLASS - Labor day</td>
+    </tr>
+    <tr>
+      <td class="wed"></td>
+      <td class="wed">8</td>
+      <td class="wed">Lambda calculus</td>
+      <td class="wed"><a href="lectures/5.pdf">Notes</a></td>
+      <td class="wed">&nbsp;</td>
+    </tr>
+    <tr>
+      <td></td>
+      <td>13</td>
+      <td>Sums and Products</td>
+      <td><a href="lectures/6.pdf">Notes</a>/<a href="lectures/stlc.pdf">STLC</a></td>
+    </tr>
+    <tr>
+      <td class="wed"></td>
+      <td class="wed">15</td>
+      <td class="wed">The Curry-Howard isomorphism</td>
+      <td class="wed"><a href="lectures/7.pdf">Notes</a></td>
+      <td class="wed">&nbsp;</td>
+    </tr>
+    <tr>
+      <td></td>
+      <td>20</td>
+      <td>Polymorphism</td>
+      <td><a href="lectures/8.pdf">Notes</a></td>
+    </tr>
+    <tr>
+      <td class="wed"></td>
+      <td class="wed">22</td>
+      <td class="wed">General recursion and recursive types</td>
+      <td class="wed"><a href="lectures/9.pdf">Notes</a></td>
+      <td class="wed">HW1 Out</td>
+    </tr>
+    <tr>
+      <td></td>
+      <td>27</td>
+      <td>Subtyping</td>
+      <td><a href="lectures/subtyping.pdf">Notes</a></td>
+    </tr>
+    <tr>
+      <td class="wed"></td>
+      <td class="wed">29</td>
+      <td class="wed">Modeling state</td>
+      <td class="wed"><a href="lectures/state.pdf">Notes</a></td>
+      <td class="wed">&nbsp;</td>
+    </tr>
+    <tr>
+      <td>October</td>
+      <td>4</td>
+      <td>Garbage Collection</td>
+      <td><a href="lectures/gc.pdf">Notes</a></td>
+    </tr>
+    <tr>
+      <td></td>
+      <td>6</td>
+      <td>Big-step and cost semantics</td>
+      <td><a href="lectures/bigstep.pdf">Notes</a></td>
+      <td>&nbsp;</td>
+    </tr>
+    <tr>
+      <td class="wed"></td>
+      <td class="wed">7</td>
+      <td class="wed">&nbsp;</td>
+      <td class="wed">&nbsp;</td>
+      <td class="wed">HW1 Due</td>
+    </tr>
+    <tr>
+      <td></td>
+      <td>11</td>
+      <td>NO CLASS - Fall break</td>
+    </tr>
+    <tr>
+      <td class="wed"></td>
+      <td class="wed">13</td>
+      <td class="wed">Parallelism</td>
+      <td class="wed"><a href="lectures/par.pdf">Notes</a></td>
+      <td class="wed">&nbsp;</td>
+    </tr>
+    <tr>
+      <td></td>
+      <td>18</td>
+      <td>Stack machines</td>
+      <td><a href="lectures/stack.pdf">Notes</a></td>
+      <td>HW2 Out</td>
+    </tr>
+    <tr>
+      <td class="wed"></td>
+      <td class="wed">20</td>
+      <td class="wed">NO CLASS</td>
+      <td class="wed">&nbsp;</td>
+      <td class="wed">&nbsp;</td>
+    </tr>
+    <tr>
+      <td></td>
+      <td>25</td>
+      <td>Evaluation contexts</td>
+      <td><a href="lectures/ctx.pdf">Notes</a></td>
+    </tr>
+    <tr>
+      <td class="wed"></td>
+      <td class="wed">27</td>
+      <td class="wed">Linear type systems</td>
+      <td class="wed"><a href="lectures/linear.pdf">Notes</a></td>
+      <td class="wed">&nbsp;</td>
+    </tr>
+    <tr>
+      <td>November</td>
+      <td>1</td>
+      <td>Modal type systems</td>
+      <td><a href="lectures/modal.pdf">Notes</a></td>
+      <td>&nbsp;</td>
+    </tr>
+    <tr>
+      <td class="wed"></td>
+      <td class="wed">3</td>
+      <td class="wed">Paper: <a href="http://cs.iit.edu/~smuller/papers/icfp18-preprint.pdf">PriML</a></td>
+      <td class="wed"><a href="lectures/priml.pdf">Notes</a></td>
+      <td class="wed">HW 2 Due</td>
+    </tr>
+    <tr>
+      <td></td>
+      <td>8</td>
+      <td>Paper: QWire</td>
+    </tr>
+    <tr>
+      <td class="wed"></td>
+      <td class="wed">10</td>
+      <td class="wed">Paper: L<sup>3</sup></td>
+      <td class="wed">&nbsp;</td>
+      <td class="wed">&nbsp;</td>
+    </tr>
+    <tr>
+      <td></td>
+      <td>15</td>
+      <td>Paper: Secure Flow Analysis</td>
+    </tr>
+    <tr>
+      <td class="wed"></td>
+      <td class="wed">17</td>
+      <td class="wed">Paper: Automated Amortized Resource Analysis</td>
+      <td class="wed">&nbsp;</td>
+      <td class="wed">&nbsp;</td>
+    </tr>
+    <tr>
+      <td></td>
+      <td>22</td>
+      <td>Paper: WebAssembly</td>
+    </tr>
+    <tr>
+      <td class="wed"></td>
+      <td class="wed">24</td>
+      <td class="wed">Thanksgiving - NO CLASS</td>
+      <td class="wed">&nbsp;</td>
+      <td class="wed">&nbsp;</td>
+    </tr>
+    <tr>
+      <td></td>
+      <td>29</td>
+      <td>How to write a research paper/TBA</td>
+    </tr>
+    <tr>
+      <td>December</td>
+      <td>1</td>
+      <td>Final project presentations/wrapup</td>
+    </tr>
+  </table>
+  </p>
+
+  <a name="applications"></a>
+  <h2>Applications</h2>
+  <p>
+  This course is largely about applying programming language techniques
+  (which you'll learn in the first ~2/3 of the class) to solve problems in
+  other areas. Your paper presentation and your final project will focus on
+  these applications. Here are some ways people have applied PL techniques
+  to solve other problems (both inside and outside of computer science!)
+  for inspiration.
+  </p>
+  <p>
+    When thinking about your own application for your project, you should
+    feel neither constrained to pick something from this list nor forbidden
+    from picking something already on the list. These are only examples. I'd
+    encourage you to pick something related to your own interests (CS or non-CS)
+    and/or research (if you're doing research). If you're having trouble
+    figuring out how to connect an interest to PL, we'll discuss it and try
+    to figure something out!
+  </p>
+  <p>
+    The linked papers will be quite difficult to read at first; hopefully
+    over the first part of the class, you'll find them easier. However,
+    we still may not learn all of the techniques and notations used in these
+    papers in the class. If you'd really like to understand one of these
+    papers and still find it difficult, I'd be happy to discuss it!
+  </p>
+  <ul>
+    <li> <a href="http://www.cs.cmu.edu/~rwh/papers/ml5/tgc.pdf">Distributed/Heterogenous Systems</a>
+    <li> <a href="https://dash.harvard.edu/handle/1/3293156">Garbage Collection</a>
+    <li> <a href="http://users.cis.fiu.edu/~smithg/papers/jcs96.pdf">Information Security</a>
+    <li> <a href="https://dl.acm.org/doi/pdf/10.1145/640128.604148">Heap Space Usage</a> (the same techniques have been applied to execution time and many other resources)
+    <li> <a href="https://13a75b74-a-62cb3a1a-s-sites.googlegroups.com/site/umutacar/publications/pldi2017.pdf?attachauth=ANoY7cro89TDeK0ViwVQiFseod7CyKdLgQVzVmnQi_UwYbMJM9-fzcKFKxmMe7L9er3Npt20MQfbzoQD6KSNbVmMs7fpHQGx-Gjp9R2dAhaAzNskwu--Z86Qm8DE8CvaJF7pz4-295FvH5y3EGgeSjVlSkTQFg2zr_j6ULpSw0a-xVKoJ573x5iSziz9Wm0zDJs205Ai3m2pQHZVgquXmmVYlhIrCP8lQrwOdNMU0aomr1ETnGcWSk0%3D&attredirects=0">Priority Inversions in Interactive Programs</a>
+    <li> <a href="https://arxiv.org/abs/2012.15422">Unix Pipelines</a>
+    <li> <a href="https://www.cs.cornell.edu/~jnfoster/papers/frenetic-netkat.pdf">Networking</a>
+    <li> <a href="https://flightplan.cis.upenn.edu/flightplan.pdf">More Networking</a>
+    <li> <a href="https://hal.inria.fr/hal-03159939/file/paper.pdf">Law</a>
+    <li> <a href="https://s3-us-west-1.amazonaws.com/disneyresearch/wp-content/uploads/20160705213118/A-Compiler-for-3D-Machine-Knitting-Paper.pdf">Knitting</a>
+    <li> <a href="https://arxiv.org/pdf/1909.12252.pdf">Computer-aided Design (CAD)</a>
+    <li> <a href="https://www.cis.upenn.edu/~halleyy/categorial.pdf">Music</a>
+    <li> <a href="https://users.wpi.edu/~bbohrer/pub/adhs18.pdf">Roller Coasters</a>
+    <li> <a href="https://drive.google.com/file/d/0B2ZZQSkekmG-bk9jamRNTy0xNzQ/view?resourcekey=0-Oluwxd7sJRfeTiQRHdqiMg">Generative Interactive Systems</a> (think text adventure games)
+    </ul>
+  
+  <a name="policies"></a>
+<h2>Policies</h2>
+
+<h3>Attendance/COVID</h3>
+<p>
+  The plan is for this class to meet in person, as discussion and participation
+  will be important for the nature of the class. Remote participation can be
+  arranged with the instructor if necessary for particular classes (e.g., if
+  quarantine restrictions, etc., prevent you from being on campus for an
+  extended period of time). The course modality (in-person/online) and
+  schedule are of course, subject to possible change based on changes in
+  IIT or Chicago policies.
+</p>
+
+<h3>Grading</h3>
+<p>
+Final grades will be based on the following:
+<table border=0>
+  <tr><td>40%</td><td>Homeworks (3-4, in the first ~2/3 of the class)</td></tr>
+  <tr><td>20%</td><td>Paper Presentation</td></tr>
+  <tr><td>30%</td><td>Final Project</td></tr>
+  <tr><td>10%</td><td>Participation/Discussion</td></tr>
+</table>
+</p>
+
+<!--
+<p>Final letter grades will be assigned at the instructor's discretion based
+  on the difficulty of the homeworks and exams, which is difficult to predict
+  before the semester starts. This should only help you and shouldn't be a
+  source of stress (e.g., barring exceptional circumstances, earning 90% based
+  on the formula above should earn you an A, but if grades were lower than
+  expected and I feel that students with lower final grades learned the
+  material well enough to earn As also, I'll adjust accordingly).
+</p>
+<p>That said, my main grading policy is fairness: asking for a higher grade
+  (without pointing to specific things that have been graded incorrectly)
+  won't succeed, because that wouldn't be fair to the rest of the students.
+</p>
+-->
+
+
+
+<h3>Late Days/Late Work</h3>
+<p>
+  Each student has 4 "late days" to use on homeworks over the course of the
+  semester. Using a late day extends the deadline by 24 hours. You do not
+  need to let me know you're using late days; they'll be deducted automatically
+  when you hand in the work.
+</p>
+<p>
+  <i><b>Important:</b>
+    No more than two late days may be used on any one assignment. Late days may
+    not be used on the paper presentation or the final project.
+  </i>
+</p>
+<p>
+  After 48 hours, or if you have used up your late days, late work will not
+  be accepted without the instructor's permission (and will be granted only
+  for good reasons, e.g., medical emergencies).
+</p>
+
+
+<h3>Collaboration</h3>
+<p>
+  Homeworks are to be completed individually.
+  Discussing general course concepts with other students to get a better
+  understanding is permitted (and encouraged!). More specific discussions
+  about homework questions is permitted as long as:
+</p>
+  <ul>
+    <li>Discussion is two-way: it's not just one person giving the other help.
+    </li>
+    <li>Discussion is at the level of concepts and general strategies (e.g.,
+      an approach to solving a problem), not specific answers or proofs.
+    </li>
+    <li>All students involved write up their solutions independently.
+    </li>
+  </ul>
+  <p>
+  Policies for the paper presentation and final project are still TBD, but
+  it is likely working with a partner/team will be allowed.
+  </p>
+
+
+<h3>Illinois Tech's Sexual Harassment and Discrimination Information</h3>
+<p>Illinois Tech prohibits all sexual harassment, sexual misconduct,
+and gender discrimination by any member of our community. This
+includes harassment among students, staff, or faculty. Sexual
+harassment of a student by a faculty member or sexual harassment of an
+employee by a supervisor is particularly serious. Such conduct may
+easily create an intimidating, hostile, or offensive environment.
+</p>
+
+<p>
+Illinois Tech encourages anyone experiencing sexual harassment or
+sexual misconduct to speak with the Office of Title IX Compliance for
+information on support options and the resolution process.
+</p>
+
+<p>
+You can report sexual harassment electronically at
+<a href="https://iit.edu/incidentreport">iit.edu/incidentreport</a>,
+which may be completed anonymously. You may
+additionally report by contacting the Title IX Coordinator, Virginia
+Foster at <a href="mailto:foster@iit.edu">foster@iit.edu</a>
+or the Deputy Title IX Coordinator at
+<a href="mailto:eespeland@iit.edu">eespeland@iit.edu</a>.
+</p>
+
+<p>
+For confidential support, you may reach Illinois Tech's Confidential
+Advisor at (773) 907-1062. You can also contact a licensed
+practitioner in Illinois Tech's Student Health and Wellness Center at
+<a href="mailto:student.health@iit.edu">student.health@iit.edu</a>
+or (312)567-7550.
+</a>
+</p>
+
+<p>
+For a comprehensive list of resources regarding counseling services,
+medical assistance, legal assistance and visa and immigration
+services, you can visit the Office of Title IX Compliance website at
+<a href="https://www.iit.edu/title-ix/resources">https://www.iit.edu/title-ix/resources</a>.
+</p>
+
+
+
+  
+<td width="20%">
+  &nbsp;
+</td>
+</tr>
+</table>
+</body>
+</html>

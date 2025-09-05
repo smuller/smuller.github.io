@@ -1,0 +1,659 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" 
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+<link rel="stylesheet" type="text/css" href="style.css" />
+<title>CS536 Fall 2023: Science of Programming</title>
+<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1" />
+<meta name="keywords" content="Illinois Tech IIT CS536 Science of Programming Fall 2023" /> 
+</head>
+<script type="text/javascript">
+  function writeEmail (first, last, number, pre) {
+    var uni="iit.edu";
+    document.write(first + last + number + "@" + pre + uni);
+  }
+</script>
+<body>
+<table border="0" width="100%">
+<tr>
+<td width="20%">
+&nbsp;
+</td>
+<td width="60%" id="main">
+  <h1>CS536: Science of Programming, Fall 2023</h1>
+  <b>Instructor:</b> Stefan Muller,
+  <script type="text/javascript">
+    document.write("<a href=mailto:");
+    writeEmail("s", "muller", "2", "");
+    document.write(">");
+    writeEmail("s", "muller", "2", "");
+    document.write("</a>");
+  </script>
+  <noscript>
+    (first initial) (last name) 2 (at) iit (dot) edu
+  </noscript>
+  <br/>
+  <div style="text-indent: 25px;"><i>Office Hours:</i> M 2-3 (SB 218E), Th 10-11 (Zoom)</div>
+  <b>TAs:</b>
+  Chaoqi Ma,
+  <script type="text/javascript">
+    document.write("<a href=mailto:");
+    writeEmail("c", "ma", "17", "hawk.");
+    document.write(">");
+    writeEmail("c", "ma", "17", "hawk.");
+    document.write("</a>");
+  </script>
+  <noscript>
+    (first initial) (last name) 17 (at) hawk (dot) iit (dot) edu
+  </noscript>
+  <div style="text-indent: 25px;"><i>Office Hours:</i> T/Th 2-3 (T: SB 004, Th: Zoom)</div>
+  Gagan Beerappa,
+  <script type="text/javascript">
+    document.write("<a href=mailto:");
+    writeEmail("g", "beerappa", "", "hawk.");
+    document.write(">");
+    writeEmail("g", "beerappa", "", "hawk.");
+    document.write("</a>");
+  </script>
+  <noscript>
+    (first initial) (last name) (at) hawk (dot) iit (dot) edu
+  </noscript>
+  <div style="text-indent: 25px;"><i>Office Hours:</i> W/F 2-3 (Google Meet)</div>
+  Param Modi,
+  <script type="text/javascript">
+    document.write("<a href=mailto:");
+    writeEmail("p", "modi", "6", "hawk.");
+    document.write(">");
+    writeEmail("p", "modi", "6", "hawk.");
+    document.write("</a>");
+  </script>
+  <noscript>
+    (first initial) (last name) 6 (at) hawk (dot) iit (dot) edu
+  </noscript>
+  <div style="text-indent: 25px;"><i>Office Hours:</i> T/Th 11:30-12:30 (Zoom)</div>
+  <br />
+  <b>Lectures: </b> Mon., Wed. 10:00-11:15 AM, Perlstein Hall 131
+  <ul>
+    <li> <b>Section 01</b>: In-person class</li>
+    <li> <b>Section 02</b>: In-person class, PhD qualifier section</li>
+    <li> <b>Section 03</b>: Online</li>
+  </ul>
+      
+  <br />
+  (see <a href="#policies">Attendance Policy</a> for details)
+</br>
+
+<!-- <hr /> -->
+<div style="text-align: center;">
+  <p style="padding: 0px;">
+<a href="#desc">Course Description</a>&nbsp;&nbsp;&nbsp;&nbsp;
+<a href="#schedule">Schedule</a>&nbsp;&nbsp;&nbsp;&nbsp;
+<a href="#resources">Resources</a>&nbsp;&nbsp;&nbsp;&nbsp;
+<a href="#policies">Policies</a>
+  </p>
+</div>
+<hr />
+
+<a name="desc"></a>
+<h2>Course Outcomes</h2>
+<p>
+  By the end of the class, you should be able to answer:
+  <ul>
+    <li>How does verification differ from testing?</li>
+    <li>How do we understand the semantics of programs?</li>
+    <li>How do semantics affect the way we understand program correctness?</li>
+    <li>What rules of reasoning can we use to discuss program correctness?</li>
+    <li>How is correctness of parallel programs different?</li>
+    <li>What if program execution isn't deterministic?</li>
+  </ul>
+  <ul>
+</p>
+
+<b>Prerequisites: </b> CS330 and CS331
+
+<a name="schedule"></a>
+<h2>Schedule</h2>
+<p>
+  Note: this schedule is incomplete, tentative and subject to change.
+</p>
+  <table>
+    <tr><td></td>
+      <td></td>
+      <td>Topic</td>
+      <td>Notes</td>
+      <td></td>
+    </tr>
+    
+    <tr class="mon">
+      <td class="mon">Aug.</td>
+      <td class="mon">21</td>
+      <td>Intro</td>
+      <td><a href="lectures/1-2.pdf">Slides</a></td>
+      <td></td>
+    </tr>
+    <tr class="wed">
+      <td class="wed"></td>
+      <td class="wed">23</td>
+      <td class="wed">Propositional logic</td>
+      <td class="wed"><a href="lectures/1-2.pdf">Slides</a></td>
+      <td class="wed"><a href="practice/01.pdf">Practice</a></td>
+      <td class="wed">HW1 Out</td>
+    </tr>
+
+    <tr class="mon">
+      <td class="mon"></td>
+      <td class="mon">28</td>
+      <td>Pred. logic, State update and substitution</td>
+      <td><a href="lectures/03-predstate.pdf">Notes</a></td>
+      <td><a href="practice/state.pdf">Practice</a></td>
+      <td></td>
+    </tr>
+    <tr class="wed">
+      <td class="wed"></td>
+      <td class="wed">30</td>
+      <td class="wed">Expressions and types</td>
+      <td class="wed"><a href="lectures/04-types.pdf">Notes</a></td>
+      <td class="wed"><a href="practice/types.pdf">Practice</a></td>
+      <td class="wed"></td>
+    </tr>
+
+    <tr class="mon">
+      <td class="mon">Sep.</td>
+      <td class="mon">4</td>
+      <td><b>No class</b> - Labor Day</td>
+      <td></td>
+      <td></td>
+    </tr>
+    <tr class="wed">
+      <td class="wed"></td>
+      <td class="wed">6</td>
+      <td class="wed">Statements and operational semantics</td>
+      <td class="wed"><a href="lectures/05-stmt.pdf">Notes</a></td>
+      <td class="wed"><a href="practice/stmt.pdf">Practice</a></td>
+      <td class="wed">HW1 Due</td>
+    </tr>
+
+    <tr class="mon">
+      <td class="mon"></td>
+      <td class="mon">11</td>
+      <td>Big-step semantics, divergence, runtime errors</td>
+      <td><a href="lectures/06-bigstep.pdf">Notes</a></td>
+      <td><a href="practice/bigstep.pdf">Practice</a></td>
+      <td>HW2 Out</td>
+    </tr>
+    <tr class="wed">
+      <td class="wed"></td>
+      <td class="wed">13</td>
+      <td class="wed">Hoare triples I</td>
+      <td class="wed"><a href="lectures/07-hoaretrp.pdf">Notes</a></td>
+      <td class="wed"><a href="practice/hoare.pdf">Practice</a></td>
+      <td class="wed"></td>
+    </tr>
+
+    <tr class="mon">
+      <td class="mon"></td>
+      <td class="mon">18</td>
+      <td>Hoare triples II</td>
+      <td>(cont'd)</td>
+      <td><a href="practice/hoare2.pdf">Practice</a></td>
+    </tr>
+    <tr class="wed">
+      <td class="wed"></td>
+      <td class="wed">20</td>
+      <td class="wed">Hoare triples III</td>
+      <td class="wed"><a href="lectures/09-rules.pdf">Notes</a></td>
+      <td class="wed"></td>
+      <td class="wed">HW2 Due</td>
+    </tr>
+
+    <tr class="mon">
+      <td class="mon"></td>
+      <td class="mon">25</td>
+      <td>Proofs and Proof Outlines</td>
+      <td><a href="lectures/10-outlines.pdf">Notes</a></td>
+      <td><a href="practice/proofs.pdf">Practice</a></td>
+      <td></td>
+    </tr>
+    <tr class="wed">
+      <td class="wed"></td>
+      <td class="wed">27</td>
+      <td class="wed">Weakest preconditions I</td>
+      <td class="wed"><a href="lectures/11-wp.pdf">Notes</a></td>
+      <td class="wed"><a href="practice/wp.pdf">Practice</a></td>
+      <td class="wed"></td>
+    </tr>
+
+    <tr class="mon">
+      <td class="mon">Oct.</td>
+      <td class="mon">2</td>
+      <td>Weakest preconditions II</td>
+      <td><a href="lectures/12-wp.pdf">Notes</a></td>
+      <td><a href="practice/calcwp.pdf">Practice</a></td>
+      <td></td>
+    </tr>
+    <tr class="wed">
+      <td class="wed"></td>
+      <td class="wed">4</td>
+      <td class="wed">Strongest postconditions</td>
+      <td class="wed"><a href="lectures/13-sp.pdf">Notes</a></td>
+      <td class="wed"><a href="practice/calcsp.pdf">Practice</a></td>
+      <td class="wed"></td>
+    </tr>
+
+    <tr class="mon">
+      <td class="mon"></td>
+      <td class="mon">9</td>
+      <td><b>No class</b> - Fall break</td>
+      <td></td>
+      <td></td>
+    </tr>
+    <tr class="wed">
+      <td class="wed"></td>
+      <td class="wed">11</td>
+      <td class="wed">Loop invariants I</td>
+      <td class="wed"><a href="lectures/14-15-loopinv.pdf">Notes</a></td>
+      <td class="wed"><a href="practice/loopinv.pdf">Practice</a></td>
+      <td class="wed"></td>
+    </tr>
+
+    <tr class="mon">
+      <td class="mon"></td>
+      <td class="mon">16</td>
+      <td>Loop invariants II</td>
+      <td>(Cont'd)</td>
+      <td><a href="practice/loopinv2.pdf">Practice</a></td>
+    </tr>
+    <tr class="wed">
+      <td class="wed"></td>
+      <td class="wed">18</td>
+      <td class="wed">Review session</td>
+      <td class="wed"></td>
+      <td class="wed"></td>
+      <td class="wed"></td>
+    </tr>
+    
+    <tr class="mon">
+      <td class="mon"></td>
+      <td class="mon">23</td>
+      <td><b>Midterm Exam</b></td>
+      <td></td>
+      <td></td>
+    </tr>
+    <tr class="wed">
+      <td class="wed"></td>
+      <td class="wed">25</td>
+      <td class="wed">Proof Outlines</td>
+      <td class="wed"><a href="lectures/16-pfoutline.pdf">Notes</a></td>
+      <td class="wed"><a href="practice/pfoutlines.pdf">Practice</a></td>
+      <td class="wed">HW5 Out</td>
+    </tr>
+
+    <tr class="mon">
+      <td class="mon"></td>
+      <td class="mon">30</td>
+      <td>Loop bounds</td>
+      <td><a href="lectures/17-loopbound.pdf">Notes</a></td>
+      <td><a href="practice/bounds.pdf">Practice</a></td>
+    </tr>
+    <tr class="wed">
+      <td class="wed">Nov.</td>
+      <td class="wed">1</td>
+      <td class="wed">Array Assignments</td>
+      <td class="wed"><a href="lectures/18-arrayassign.pdf">Notes</a></td>
+      <td class="wed"><a href="practice/array.pdf">Practice</a></td>
+      <td class="wed"></td>
+    </tr>
+
+    <tr class="mon">
+      <td class="mon"></td>
+      <td class="mon">6</td>
+      <td>Pointers and local reasoning</td>
+      <td><a href="lectures/19-pointers.pdf">Notes</a></td>
+      <td></td>
+      <td>HW5 Due</td>
+    </tr>
+    <tr class="wed">
+      <td class="wed"></td>
+      <td class="wed">8</td>
+      <td class="wed">Separation logic</td>
+      <td class="wed"><a href="lectures/20-separation.pdf">Notes</a></td>
+      <td class="wed"></td>
+      <td class="wed">HW6 Out</td>
+    </tr>
+
+    <tr class="mon">
+      <td class="mon"></td>
+      <td class="mon">13</td>
+      <td>Separation logic</td>
+      <td>(cont'd)</td>
+      <td></td>
+      <td></td>
+    </tr>
+    <tr class="wed">
+      <td class="wed"></td>
+      <td class="wed">15</td>
+      <td class="wed">Sequential nondeterminism</td>
+      <td class="wed"><a href="lectures/21-nondeterminism.pdf">Notes</a></td>
+      <td class="wed"><a href="practice/seqnd.pdf">Practice</a></td>
+      <td class="wed"></td>
+    </tr>
+
+    <tr class="mon">
+      <td class="mon"></td>
+      <td class="mon">20</td>
+      <td>Parallel program basics</td>
+      <td><a href="lectures/22-parbasics.pdf">Notes</a></td>
+      <td><a href="practice/parbasic.pdf">Practice</a></td>
+      <td>HW6 Due, HW7 Out</td>
+    </tr>
+    <tr class="wed">
+      <td class="wed"></td>
+      <td class="wed">22</td>
+      <td class="wed"><b>No class</b> - Thanksgiving break</td>
+      <td class="wed"></td>
+      <td class="wed"></td>
+      <td class="wed"></td>
+    </tr>
+
+    <tr class="mon">
+      <td class="mon"></td>
+      <td class="mon">27</td>
+      <td><b>Class cancelled</b></td>
+      <td></td>
+      <td></td>
+    </tr>
+    <tr class="wed">
+      <td class="wed"></td>
+      <td class="wed">29</td>
+      <td class="wed">Concurrent separation logic/Wrap-up</td>
+      <td class="wed"><a href="lectures/22-wrapup.pdf">Slides</a></td>
+      <td class="wed"></td>
+      <td class="wed">HW7 Due</td>
+    </tr>
+    <tr class="mon">
+      <td class="mon">Dec.</td>
+      <td class="mon">5</td>
+      <td><b>Final Exam</b> - 2-4pm</td>
+      <td></td>
+      <td></td>
+    </tr>
+    <!--
+
+    <tr class="wed">
+      <td class="wed"></td>
+      <td class="wed">29</td>
+      <td class="wed"></td>
+      <td class="wed"></td>
+      <td class="wed"></td>
+      <td class="wed">HW7 Due</td>
+    </tr>
+    -->
+
+  </table>
+</p>
+
+<a name="resources"></a>
+  <h2>Resources</h2>
+<b>Textbook: </b>
+<p>
+  There is no required textbook for the course. Class notes will be provided.
+</p>
+<p>
+  If you really want a book to reference, the following are OK but entirely
+  optional (list and notes courtesy of Jim Sasaki):
+  <ul>
+			<li><cite>The Science of Programming</cite>, by David Gries, Springer-Verlag, &copy;&nbsp;1981.
+				Unfortunately the book uses weird notation and has a number of typographical errors
+				and doesn't include everything we'll be covering.</li>
+			<li>Most of the course material comes from
+				<cite>Verification of Sequential and Concurrent Programs</cite> (3rd edition),
+				by Krzysztof R. Apt, Frank S. de Boer, and Ernst-R&uuml;diger Olderog, &copy;&nbsp;2009, Springer-Verlag. 
+				But don't get this book: It's expensive and written for a very theoretical audience.</li>
+  </ul>
+</p>
+
+<p>
+  Also, here are some potentially helpful references for reviewing propositional
+  and predicate logic (these are <i>very</i> important topics for understanding
+  the course material; they will be reviewed briefly the first week of class
+  but it is mostly assumed you already have some logic background; again this
+  list is courtesy of Jim Sasaki):
+</p>
+<ol>
+  <li>One reference is online at
+				<a href="https://my.iit.edu/web/home-community/library">myIIT Library</a> > Databases > Books 24x7.	
+				Search for <cite>Fundamentals of Discrete Math for Computer Science: A Problem-Solving Primer</cite>
+					by Tom Jenkyns and Ben Stephenson, Springer &copy; 2013.&nbsp;
+				Study Sections 3.2 (Boolean Expressions and Truth Tables) and 3.3 (Predicates and Quantifiers).
+</li>
+  <li>There is a <a href="https://www.codeguage.com/">CodeGuage</a> site with an Elementary Logic course.
+    A quick spin through that might be helpful.
+    Unfortunately, it seems they only discuss predicates with outermost quantifiers.
+    (E.g., &exist;x.&exist;y.p, but not predicates like (&exist;x.p) &rarr; (&exist;y.q).)
+  </li>
+
+  <li>There's a <a href="https://pi.math.cornell.edu/~web3040/PredCalc_s11.pdf">handout at Cornell</a>
+    that is a more detailed introduction to predicate calculus.
+    Two notes: We write (e.g.) (&forall;x.P) &and; &exist;y.Q where they write <span class='nowrap'>(&forall;x)(P &and; (&exist;y)Q)</span>.
+				We write logical equivalence as "&hArr;"; they use 
+				<table style='display:inline'>
+					<tr style='margin: 0; padding: 0'>
+						<td style='border: 0px solid blue; margin: 0; padding: 0; text-align: center'>LE</td>
+					</tr>
+					<tr style='margin: 0; padding: 0'>
+						<td style='border: 0px solid green; line-height: 1px; margin: 0; padding: 0; text-align: center'><span style='font-size: 150%'>&harr;</span></td>
+					</tr>
+				</table>.
+  </li>
+</ol>
+</p>
+
+<b>Other Resources:</b>
+<p><a href="logic/proofs.html">Logic proof checker</a></p>
+<p><a href="https://dafny.org/dafny/Installation">Dafny installation instructions</a></p>
+<p><a href="https://dafny-lang.github.io/dafny/">Dafny documentation</a></p>
+
+<a name="policies"></a>
+<h2>Policies</h2>
+
+<h3>Attendance</h3>
+<p>
+  Sections 01 and 02 will meet on campus. Live
+  attendance is encouraged; the ability to hear the material and ask
+  questions live is valuable, and while participation is not an
+  explicit part of your grade, it may be used to "break ties." That
+  said, attendance is not mandatory, and the occasional absence will
+  not count against you and doesn't need to be excused. If you are in
+  Sections 01 and 02 and are consistently not able to come to lecture
+  for some reason, discuss this with the instructor. I do not currently plan
+  to livestream lectures, but they will be recorded.
+</p>
+<p>
+  Section 03 is an online section; you will watch the lectures online at your
+  leisure but complete the same assignments and exams as the in-person students.
+  For classroom capacity reasons, Section 03 students <i>should not</i>
+  attend in-person without the permission of the instructor.
+</p>
+
+<h3>PhD Qualifier section</h3>
+<p>
+PhD students who wish to use this course to satisfy the written qualifying
+requirement must be enrolled in Section 02 (even if you are not able to
+attend class in person; please let me know if this is the case, but I won't
+hold it against you). Students in this section will complete the same
+assignments and exams as the other sections, but may be graded to a different
+standard.
+</p>
+
+<h3>Grading</h3>
+<p>
+Final grades will be based on the following:
+<table border=0>
+  <tr><td>40%</td><td>Homeworks (6-8, may not be evenly weighted)</td></tr>
+  <tr><td>25%</td><td>Midterm Exam (Oct. 23)</td></tr>
+  <tr><td>35%</td><td>Final Exam</td></tr>
+</table>
+</p>
+
+<p>Final letter grades will be calculated as follows:
+  <br />
+  <table border=0>
+    <tr><td>&gt;=85</td><td>A</td></tr>
+    <tr><td>70-85</td><td>B</td></tr>
+    <tr><td>60-70</td><td>C</td></tr>
+    <tr><td>&lt;60</td><td>E</td></tr>
+    </table>
+</p>
+<p>
+
+<p>My main grading policy is fairness: asking for a higher grade
+  (without pointing to specific things that have been graded incorrectly)
+  won't succeed, because that wouldn't be fair to the rest of the students.
+  I understand that this is a required class for many students and there may
+  be unpleasant consequences for earning less than a certain grade, however
+  that absolutely cannot be a factor in your grade.
+</p>
+
+<h3>Late Days/Late Work</h3>
+<p>
+  Each student has 8 "late days" to use on homeworks over the course of the
+  semester. Using a late day extends the deadline by 24 hours. You do not
+  need to let us know you're using late days; they'll be deducted automatically
+  when you hand in the work.
+</p>
+<p>
+  <i><b>Important:</b>
+    No more than two late days may be used on any one assignment. Late days
+    may not be used on exams.
+  </i>
+</p>
+<p>
+  After 48 hours, late work will not
+  be accepted without the instructor's permission (and will be granted only
+  for good reasons, e.g., medical emergencies).
+</p>
+<p>
+  If you've used up your late days, work up to 2 days late (without prior
+  permission from the instructor) will be accepted with
+  a penalty of 10% per day.
+</p>
+
+<h3>Exams</h3>
+<p>
+  Section 01 and 02 students will take
+  the midterm exam in person at the normal class time.
+  Section 03 students should expect an email to make arrangements to take
+  the exam. If they can take the exam in class, this is preferred, but
+  arrangements for remote exams are also possible.
+  The final exam will be during finals week at a time to be determined
+  by the Registrar.
+  More details will be announced later.
+</p>
+
+<h3>Collaboration and Using Outside Sources</h3>
+<p>
+  All work submitted for credit (homework and exams) must be your own
+  individual work. Some examples of violations of this policy are sharing
+  answers with other students (this is a violation for <i>all</i> students
+  involved, even if the answers were the original work of one of the students),
+  looking up answers to questions on the web, and using generative AI tools
+  like ChatGPT<a href="#chat"><sup>*</sup></a> (note that these are just some examples, but not an exhaustive
+  list).
+</p>
+<p>
+  One exception is that you are free to get help from the instructor, TAs,
+  and Illinois Tech's <a href="https://www.iit.edu/arc">Academic Resource Center</a>.
+  These resources are here for you, and you can (and should!) use them if you
+  need to. If you are working with a tutor outside of Illinois Tech or have
+  a similar situation, please discuss the situation with the instructor as
+  soon as possible and before submitting any work.
+</p>
+<p>
+  All violations of this policy will result in a zero on the relevant
+  assignment or exam, and a report to the university's academic honesty office
+  (which may result in additional penalties with repeated violations).
+  For more information about what constitutes academic dishonesty and the
+  policies we are required to follow if we discover dishonesty, please
+  view the university's
+  <a href="https://www.iit.edu/student-affairs/student-handbook/fine-print/code-academic-honesty">Code of Academic Honesty</a>.
+</p>
+<p>
+  If you're ever
+  in doubt about whether something would violate the policy, don't hesitate
+  to contact the instructor or TA. It's always better to ask and be sure.
+</p>
+<p><sup>*</sup><i>Why can't I use ChatGPT?</i> I feel the need to explain
+this particular rule in more detail.
+Generative AI tools are likely to be with us for the long run and if you
+use what you learn in CS536 after the semester is over (and I hope you will!)
+you might well use such tools to assist with some of the more tedious parts,
+so you might well wonder why you can't use them during the class. The
+short(-ish) answer is that ChatGPT is a language model. Sophisticated as it
+may be, it has no model of formal logic, a necessary component of producing
+formal proofs. Without a background in logic and proof methods, which you'll
+be learning in this class, you have no way of knowing if a proof from an
+outside source is correct, mostly correct, or entirely wrong. While this is
+a graduate-level class, you are learning the basics of a new set of skills,
+and when learning a new skill, it's important to learn to do it yourself so 
+that you have the skills to understand and sanity-check answers that, when
+you're more advanced, you might be able to get with the assistance of a
+tool. Think of it like when you were first learning arithmetic and had to
+do so without a calculator. The rule was frustrating for us all then, and
+I expect this rule will cause some frustration now, but it's necessary for
+learning the basics of a new set of skills.
+</p>
+
+<h3>Illinois Tech's Sexual Harassment and Discrimination Information</h3>
+<p>Illinois Tech prohibits all sexual harassment, sexual misconduct,
+and gender discrimination by any member of our community. This
+includes harassment among students, staff, or faculty. Sexual
+harassment of a student by a faculty member or sexual harassment of an
+employee by a supervisor is particularly serious. Such conduct may
+easily create an intimidating, hostile, or offensive environment.
+</p>
+
+<p>
+Illinois Tech encourages anyone experiencing sexual harassment or
+sexual misconduct to speak with the Office of Title IX Compliance for
+information on support options and the resolution process.
+</p>
+
+<p>
+You can report sexual harassment electronically at
+<a href="https://iit.edu/incidentreport">iit.edu/incidentreport</a>,
+which may be completed anonymously. You may
+additionally report by contacting the Title IX Coordinator, Virginia
+Foster at <a href="mailto:foster@iit.edu">foster@iit.edu</a>
+or the Deputy Title IX Coordinator at
+<a href="mailto:eespeland@iit.edu">eespeland@iit.edu</a>.
+</p>
+
+<p>
+For confidential support, you may reach Illinois Tech's Confidential
+Advisor at (773) 907-1062. You can also contact a licensed
+practitioner in Illinois Tech's Student Health and Wellness Center at
+<a href="mailto:student.health@iit.edu">student.health@iit.edu</a>
+or (312)567-7550.
+</a>
+</p>
+
+<p>
+For a comprehensive list of resources regarding counseling services,
+medical assistance, legal assistance and visa and immigration
+services, you can visit the Office of Title IX Compliance website at
+<a href="https://www.iit.edu/title-ix/resources">https://www.iit.edu/title-ix/resources</a>.
+
+<h3>Disability Accommodations</h3>
+<p>Reasonable accommodations will be
+made for students with documented disabilities. To obtain a letter of
+accommodation, contact the Center for Disability Resources at
+<a href="https://www.iit.edu/cdr">https://www.iit.edu/cdr</a>.
+</p>
+
+<td width="20%">
+  &nbsp;
+</td>
+</tr>
+</table>
+</body>
+</html>

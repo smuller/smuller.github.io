@@ -1,0 +1,1 @@
+(Forall x. P(x) -> Q(x)) => ~(Exists x. P(x) /\ ~Q(x))
