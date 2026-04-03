@@ -1,0 +1,472 @@
+%% For double-blind review submission, w/o CCS and ACM Reference (max submission space)
+\documentclass[sigconf]{acmart}\settopmatter{printfolios=false,printccs=false,printacmref=false}
+
+%% For double-blind review submission, w/ CCS and ACM Reference
+%\documentclass[acmsmall,review,anonymous]{acmart}\settopmatter{printfolios=true}
+%% For single-blind review submission, w/o CCS and ACM Reference (max submission space)
+%\documentclass[acmsmall,review]{acmart}\settopmatter{printfolios=true,printccs=false,printacmref=false}
+%% For single-blind review submission, w/ CCS and ACM Reference
+%\documentclass[acmsmall,review]{acmart}\settopmatter{printfolios=true}
+%% For final camera-ready submission, w/ required CCS and ACM Reference
+%\documentclass[acmsmall]{acmart}\settopmatter{}
+
+
+%% Conference information
+%% Supplied to authors by publisher for camera-ready submission;
+%% use defaults for review submission.
+\acmConference[]{SIGBOVIK}
+\acmYear{}
+\acmISBN{} % \acmISBN{978-x-xxxx-xxxx-x/YY/MM}
+\acmDOI{} % \acmDOI{10.1145/nnnnnnn.nnnnnnn}
+\startPage{1}
+
+%% Copyright information
+%% Supplied to authors (based on authors' rights management selection;
+%% see authors.acm.org) by publisher for camera-ready submission;
+%% use 'none' for review submission.
+\setcopyright{none}
+%\setcopyright{acmcopyright}
+%\setcopyright{acmlicensed}
+%\setcopyright{rightsretained}
+%\copyrightyear{2018}           %% If different from \acmYear
+
+%% Bibliography style
+\bibliographystyle{ACM-Reference-Format}
+%% Citation style
+%% Note: author/year citations are required for papers published as an
+%% issue of PACMPL.
+%%\citestyle{acmauthoryear}   %% For author/year citations
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% Note: Authors migrating a paper from PACMPL format to traditional
+%% SIGPLAN proceedings format must update the '\documentclass' and
+%% topmatter commands above; see 'acmart-sigplanproc-template.tex'.
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%% Some recommended packages.
+\usepackage{booktabs}   %% For formal tables:
+%% http://ctan.org/pkg/booktabs
+\usepackage{multirow}
+\usepackage{subcaption} %% For complex figures with subfigures/subcaptions
+                        %% http://ctan.org/pkg/subcaption
+
+\usepackage{listings}
+%\usepackage{amsmath, amsthm, amssymb, stmaryrd, mathtools, mathrsfs}
+\usepackage{mathpartir}
+\usepackage{natbib}
+\usepackage{url}
+%\usepackage{tipa}
+
+\newtheorem{lemma}{Lemma}
+\newtheorem{corollary}{Corollary}
+\newtheorem{theorem}{Theorem}
+\newtheorem{proposition}{Proposition}
+
+\theoremstyle{definition}
+\newtheorem{definition}{Definition}
+\newtheorem{remark}{Remark}
+
+\newcommand{\jan}[1]{{\color{blue}[[Jan says: #1]]}}
+\newcommand{\stefan}[1]{{\color{blue}[[Stefan says: #1]]}}
+
+%\input{macros}
+
+\lstset{
+  basicstyle=\ttfamily\footnotesize,
+  language=ML
+}
+
+\begin{document}
+
+\title{GPTSort: An Earth-Shattering, Paradigm-Shifting New Sorting Algorithm}
+
+
+\author{Stefan Muller}
+\affiliation{\institution{University of Connecticut}}
+
+\begin{abstract}
+  We present a new AI-enabled sorting algorithm, GPTSort.
+  %
+  In contrast to conventional sorting algorithms, GPTSort does not
+  require implementers to have any knowledge of integer sorting.
+  %
+  When run using the GPT 4.1 model, GPTSort can sort~10 integers of up to~7
+  digits in under~2 seconds, and is correct almost all of the time.
+\end{abstract}
+
+\maketitle
+
+\section{Introduction}
+Sorting algorithms, which take a list of comparable items called {\em keys},
+and return a permutation of the input list sorted by increasing key,
+are some of the first algorithms that undergraduate computer science
+students learn.
+%
+But you don't need to know what they are to appreciate this paper or,
+apparently, at all anymore.
+%
+{\em Algorithms} are predetermined procedural strategies for solving
+problems, but apparently you don't need to know that anymore either.
+%
+You don't need to know these things because Artificial Intelligence (AI)
+has now advanced to the point where we can just have it know things for us.
+%
+So all of these things we used to know are useless because people knew these
+things in the past.
+%
+Things people knew in the past used to be called {\em scholarship}.
+%
+We now call it {\em training data}.
+%
+That's on the borderline of things you need to know.
+%
+But probably not for long.
+%
+Because soon AI will know that for us too.
+%
+It used to be that people thought that because AI was the future, it was
+important to study how to build and maintain AI tools to make that future
+the present, but now that it's the present, those things people knew in the
+past ({\em training data}) are now known by the AI and are therefore not
+necessary to know anymore.
+%
+The AI systems of the present were built by people in the past who knew
+how to build the AI systems of the present in the future.
+%
+Nobody in the past knew how to build the AI systems of the present future,
+because if they did, those would be the AI systems of the present, but
+presumably someone presently knows how to build the AI systems of the future
+even though these things aren't important to know anymore.
+%
+So, wait, who will build the AI systems of the future and how will they know
+how to do it?
+%
+I'm not sure.
+%
+But it's fine to not be sure about things.
+%
+Because AI knows them.
+%
+I should ask it.
+
+What was I talking about?
+
+Right.
+%
+Sorting algorithms.
+%
+You don't need to know algorithms for sorting anymore because, like
+everything else, AI can do it.
+%
+Sorting algorithms of the past have included algorithms like
+{\em merge sort}, {\em quick sort}, {\em insertion sort}, and {\em bubble sort}.
+%
+People used to know these things.
+%
+They are therefore {\em training data}.
+%
+But AI changed everything, including how we sort.
+%
+We will never sort the same way again.
+%
+There's no going back.
+%
+Or back and then forward and then back again.
+%
+Only forward.
+%
+That's kind of the point of sorting, but it's also the point of technological
+progress.
+
+Sometimes I wish it weren't.
+
+Anyway, this paper presents GPTSort, the only sorting algorithm you need to
+know now, unless someone realizes it's bad, in which case, it will immediately
+be replaced by something marginally better that will then be good and the
+current one, which will then be the past one, will have always been bad
+and the idea will have always been to quickly replace it with something good,
+with the past one (currently the current one) now in the past and therefore
+just being {\em training data}.
+%
+Fortunately, this isn't bad, it's good.
+%
+Take my word for it.
+%
+Well, actually, take AI's word for it.
+%
+I used to know things.
+%
+Now I am just {\em training data}.
+
+\section{Algorithm Description}
+
+In this section, we present the GPTSort algorithm.
+%
+Fortunately, the algorithm is very simple, and we can present it in very
+few words.
+%
+Because, if all of my messaging clients are any indication, if the algorithm
+consisted of more than 12 words, it would need an AI summary.
+%
+The pseudocode for the algorithm is in Figure~\ref{fig:pseudocode} and
+consists of less than~12 words.
+%
+I know because I asked AI to count them.
+%
+I used to know how to count, but now that is {\em training data}.
+%
+My son is two years old and is learning to count from muppets.
+%
+I keep telling him he doesn't need to know how to count because AI knows that
+now.
+%
+He still likes the muppets.
+%
+I guess he also doesn't know how to use AI.
+%
+I guess that's something you still need to know.
+%
+But doesn't AI know how to use AI, because people used to know how to use
+(worse) AI?
+%
+So why do I still have to know it?
+%
+My head hurts.
+%
+I should get a diagnosis from AI for why my head hurts.
+
+\begin{figure}
+\begin{lstlisting}[showspaces=false]
+Algorithm GPTSort(List L):
+  prompt = "Can you sort this list for me? Use a correct
+          computational method and output the format as
+          a comma-separated list with no other text."
+  response = LLM_API.create(prompt + join(',', L))
+  return response.split(',')
+\end{lstlisting}
+\caption{Pseudocode for GPTSort}
+\label{fig:pseudocode}
+\end{figure}
+
+Anyway, as you can see from Figure~\ref{fig:pseudocode}, the algorithm is
+quite simple.
+%
+First it turns the list into a string prefixed with a short explanation text
+called a {\em prompt} explaining what AI knows that I'd like to temporarily
+know until I forget and have to ask AI again.
+%
+Back when we used to learn things from people, we used to call these
+{\em questions} and they used to end in these curvy exclamation point things?
+%
+Just look at those things.
+%
+Wild.
+%
+Now they're prompts.
+%
+Questions are {\em training data}.
+
+We {\em prompt} the AI to sort the list, then we get back the sorted list.
+%
+Done.
+
+\section{Proof of Correctness}
+
+What's this section doing here?
+%
+In the algorithms papers that make up {\em training data}, there's a
+section called Proof of Correctness where the authors prove that their
+algorithm gives the correct answer.
+%
+That's the training data.
+%
+Our goal is to make what we know look enough like the training data that
+people can't tell them apart.
+%
+That's how we know we pass the Turing test.
+%
+Remember when we used to talk about the Turing test?
+%
+Good times.
+
+So we need this section, and it should say how we know the algorithm is
+correct.
+%
+The reason is obvious: it's right there in the prompt.
+%
+I told the AI to use a {\em correct} method to sort the numbers.
+%
+The AI has to do what you say almost all of the time.
+%
+It's the Third Law of Robotics\cite{irobot}.
+
+\section{Complexity Analysis}
+Analyzing the complexity of GPTSort is a little more difficult.
+%
+It's a constant number of operations, but if you really want to be
+pedantic, which is what people used to do, so it's in the {\em training data},
+so we have to make it look like we're doing it, one of those operations
+(quering a Large Language Model) might do a non-constant amount of work.
+%
+In order to figure out how much work it's doing, we need to know what it's
+doing.
+%
+I don't really know what an LLM is doing when you ask it something.
+%
+That's something people used to have to know, but now AI knows it, so I asked
+AI.
+%
+It said it's parsing the input string into a list of numbers by removing the
+commas, then using a guaranteed-correct sorting algorithm\footnote{Probably
+Timsort, since that's what Python used in the past~\cite{powersort}, and
+the past is the training data} and then puts the numbers back together with
+commas.
+%
+Removing and adding commas are presumably done in one pass over the prompt
+and the output of the sorting algorithm, so are
+both~$O(n)$, and Timsort (according
+to AI) is~$O(n\log n)$.
+
+\section{Comparison with Other Sorting Algorithms}\label{sec:compare}
+There's not really any need to compare with other algorithms because of
+how much of a paradigm shift AI is (it can't possibly be an apples to apples
+comparison: it's like comparing apples to way better apples that can think for
+themselves and can also postulate the law of gravity themselves rather than
+falling on someone who used to know things who could do that himself),
+but again, it's in the {\em training data}, so it's expected.
+%
+See Table~\ref{tab:compare}.
+
+\begin{table*}
+  \begin{tabular}{l l l l l l}
+    \toprule
+    Algorithm & Proven Correct? & Correct? & Average Case & Worst Case & Uses AI\\
+    \midrule
+    GPTSort & No & No & $n \log n + n\cdot \mathit{poly}(M)$ & Define ``worst'' & Yes\\
+      Merge Sort & Yes & Yes & $n \log n$ & $n \log n$ & No\\
+      Quick Sort & Yes & Yes & $n \log n$ & $n^2$ & No\\
+      Bubble Sort & Yes & Yes & $n^2$ & $n^2$ & No\\
+      \bottomrule
+  \end{tabular}
+  \caption{A comparison of GPTSort with other sorting algorithms.
+    $M$ = The size of the LLM (exponential in time, linear in Nvidia's stock price). GPTSort is clearly superior on all of the metrics anyone still cares about.}
+  \label{tab:compare}
+\end{table*}
+    
+\section{Experimental Comparison}
+I also ran the four sorting algorithms from Section~\ref{sec:compare}.
+%
+GPTSort was implemented in Python, the other three sorting algorithms were
+implemented in OCaml.
+%
+Really though, the bulk of GPTSort is implemented in some langauge that's
+probably much more performant than OCaml, so this comparison should make
+GPTSort look pretty good.
+%
+The GPTSort implementation uses the OpenAI API with GPT 4.1.
+%
+To make it look even better, we used OCaml's bytecode compiler for the other
+three sorting algorithms, and ran them on a several-year-old laptop.
+%
+We ran each sorting algorithm on lists of 10 and 100 integers between~0
+and~$10^7$, with 100 runs for each experiment.
+%
+Table~\ref{tab:exp-compare} reports the results, with time in microseconds
+averaged across all~100 runs, as well as the percentage of the runs in which
+each sorting algorithm returned the correct answer.
+
+\begin{table}
+  \begin{tabular}{l r r l r r}
+    \toprule
+    & \multicolumn{2}{c}{$N$=10} & & \multicolumn{2}{c}{$N$=100}  \\
+    \cmidrule{2-3} \cmidrule{5-6}
+    Algorithm & Time ($\mu$s) & Correct \% & & Time ($\mu$s) & Correct \%\\
+    \midrule
+    GPTSort & 1,163,740 & 93\% & & 4,669,436 & 3\%\\
+    Merge Sort & 4 & 100\% & & 45 & 100\%\\
+    Quick Sort & 2 & 100\% & & 40 & 100\%\\
+    Bubble Sort & 3 & 100\% & & 372 & 100\%\\
+      \bottomrule
+  \end{tabular}
+  \caption{An empirical comparison of GPTSort with other sorting algorithms.}
+  \label{tab:exp-compare}
+\end{table}
+
+\paragraph{Discussion of Minor Temporary Deviations from Correctness}
+As you may notice in Table~\ref{tab:exp-compare}, the results of GPTSort,
+especially for~$N=100$, occasionally differ somewhat from those of
+pre-paradigm-shift sorting algorithms.
+%
+In this subsection, we discuss these deviations.
+
+\textbf{Disclaimer:} Although we have attempted to remain in scope for
+SIGBOVIK, this subsection has the potential to contain actual useful
+scientific observations.
+
+We ran GPTSort~10 additional times with~$N=100$ and more thoroughly documented
+the deviations from correctness.
+%
+Each run returned incorrect results.
+%
+Table~\ref{tab:wrong} details, for each of the~10 runs, how many integers
+were out of order (i.e., smaller than the previous integer), how many were
+duplicated, how many were hallucinated (i.e., appeared in the output list
+but not the input list) and how many were dropped (i.e., appeared in the
+input list but not the output list).
+%
+The most common error was placing numbers out of order, with an average
+of~3.2 numbers out of order per run.
+%
+In some cases, numbers were placed in the position they would be in with one
+more or fewer digit.
+%
+This often went along with a duplication or hallucination of an integer.
+%
+For example, in one run, 795420 appeared twice in the output list, once in
+the correct place and once between 7555090 and 8209087.
+%
+In another run, 272571 appeared in the output list (in the correct position)
+but not in the input list, while 2725716 appeared in the input list (and in
+the correct position in the output list).
+%
+In some cases, out-of-order integers are not as easily explainable, but
+are usually close to the correct position (for example, in one run,
+26202 and 26128 are swapped).
+\begin{table}
+  \begin{tabular}{l r r r r}
+    \toprule
+    Run & Out of Order & Duplicated & Hallucinated & Dropped\\
+    \midrule
+    1 & 7 & 0 & 0 & 2\\
+    2 & 4 & 1 & 1 & 0\\
+    3 & 3 & 0 & 1 & 2\\
+    4 & 1 & 1 & 1 & 0\\
+    5 & 7 & 5 & 0 & 0\\
+    6 & 1 & 1 & 0 & 0\\
+    7 & 6 & 0 & 2 & 0\\
+    8 & 2 & 0 & 1 & 0\\
+    9 & 1 & 1 & 1 & 1\\
+    10 & 0 & 0 & 4 & 0\\
+    \midrule
+    Total & 32 & 9 & 11 & 5\\
+    \bottomrule
+  \end{tabular}
+  \caption{A detailed look at deviations from correctness in~10 runs
+    of GPTSort with~$N = 100$.}
+  \label{tab:wrong}
+\end{table}
+
+\section{Conclusion}
+As you can see, this paper now exists.
+%
+It is therefore {\em training data} and will be used by AI models to
+build better and better sorting algorithms in the future.
+%
+This can have only positive impacts on scientific discovery and
+sorting of integers.
+
+%\bibliographystyle{plainnat}
+\bibliography{main}
+
+\end{document}
