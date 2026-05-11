@@ -5,6 +5,14 @@ const SHORT = 3;
 const JOURNAL = 4;
 
 const papers = [
+    {authors: "Marelle León, My Dinh, and Stefan K. Muller",
+     title: "Responsive Parallelism with Dynamic and First-Class Priorities",
+     conf: "PLDI",
+     year: 2026,
+     type: CONF,
+     topic: "Responsive Parallelism",
+     note: "To Appear"
+    },
     {authors: "Stefan K. Muller, Jan Hoffmann",
      title: "Modeling and analyzing evaluation cost of CUDA kernels",
      conf: "ACM Transactions on Parallel Computing (TOPC)",
