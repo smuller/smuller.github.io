@@ -11,7 +11,8 @@ const papers = [
      year: 2026,
      type: CONF,
      topic: "Responsive Parallelism",
-     note: "To Appear"
+     acm: "https://dl.acm.org/doi/abs/10.1145/3808334",
+     pdf: "papers/pldi26-final.pdf"
     },
     {authors: "Stefan K. Muller, Jan Hoffmann",
      title: "Modeling and analyzing evaluation cost of CUDA kernels",
